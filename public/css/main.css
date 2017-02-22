@@ -1,0 +1,109 @@
+h1{
+	background: #ffe035;
+	margin: 0;
+	padding: 20px 42px;
+}
+
+#root{
+	margin: 2em 3em;
+}
+
+#root > .app{
+	display: flex;
+}
+
+form label{
+	display: block;
+}
+
+form input[type=checkbox]{
+	margin-right: .25em;
+}
+
+form input[type=checkbox] + label{
+	display: inline;
+}
+
+label > input[type=color]{
+	margin-left: .3em;
+}
+
+.posterForm{
+	margin: 0 1em 0 0;
+}
+
+.posterForm input{
+	margin-bottom: 1.25em;
+}
+
+.posterForm input[type=checkbox]{
+	margin-bottom: .5em;
+}
+
+input[type="checkbox"] {
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+
+/* CSS Secrets - Lea Verou */
+input[type="checkbox"] + label::before {
+	content: '\a0';
+	display: inline-block;
+	vertical-align: 0;
+	width: .8em;
+	height: .8em;
+	margin-right: .3em;
+	border-radius: .2em;
+	background: silver;
+	text-indent: .15em;
+	line-height: .65;
+	font-size: 1.5em;
+}
+
+input[type="checkbox"]:checked + label::before {
+	content: '\2713';
+	background: #ffe035;
+}
+
+input[type="checkbox"]:focus + label::before {
+	box-shadow: 0 0 .1em .1em #58a;
+}
+
+input[type="checkbox"]:disabled + label::before {
+	background: gray;
+	box-shadow: none;
+	color: #555;
+	cursor: not-allowed;
+}
+/* FIN CSS Secrets - Lea Verou */
+
+.posterForm ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+.posterForm ul li{
+	margin-bottom: .75em;
+}
+
+.svgDownload a{
+	background: #ffe035;
+	color: #444;
+	display: block;
+	font-size: 1.2em;
+	padding: 1em 3.5em;
+	text-align: center;
+	text-transform: uppercase;
+	transition: all .4s ease;
+}
+
+.svgDownload a:hover{
+	background: #444;
+	color: #ffe035;
+	text-decoration: none;
+	transition: all .12s ease;
+}
+
+#svgPreview{
+	margin-bottom: 1.5em;
+}
