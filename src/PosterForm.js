@@ -5,11 +5,12 @@ import SvgPreview from './SvgPreview.js';
 class PosterForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {title: '', bgColor1: '#333', bgColor2: '#555', frontColor: '#fff', teamData: this.props.teamData , areGoing: new Set()};
+    this.state = {title: '', bgColor1: '#333', bgColor2: '#666', watermarkColor: '#fff', frontColor: '#fff', teamData: this.props.teamData , areGoing: new Set()};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleBgColor1Change = this.handleBgColor1Change.bind(this);
     this.handleBgColor2Change = this.handleBgColor2Change.bind(this);
+	this.handleWatermarkColorChange = this.handleWatermarkColorChange.bind(this);
     this.handleFrontColorChange = this.handleFrontColorChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 	this.handleInputChange = this.handleInputChange.bind(this);
@@ -25,9 +26,12 @@ class PosterForm extends Component {
   }  
   
   handleBgColor2Change(event){
-    console.log(event.target.value);
 	this.setState({bgColor2: event.target.value});
-  }    
+  }
+  
+  handleWatermarkColorChange(event){
+	this.setState({watermarkColor: event.target.value});
+  }   
   
   handleFrontColorChange(event){
 	this.setState({frontColor: event.target.value});
@@ -77,6 +81,10 @@ class PosterForm extends Component {
 		 <label>
 		  Fin fondo:
 		  <input type="color" value={this.state.bgColor2} onChange={this.handleBgColor2Change} />
+        </label>
+		 <label>
+		  Color marca agua:
+		  <input type="color" value={this.state.watermarkColor} onChange={this.handleWatermarkColorChange} />
         </label>		
 		<legend>Corredores:</legend>
 		<ul>

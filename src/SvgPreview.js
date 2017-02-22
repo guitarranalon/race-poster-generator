@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './SvgPreview.css';
 import SvgPatrocinadores from './SvgPatrocinadores.js';
 import SvgDefs from './SvgDefs.js';
+import SvgCumbreLogo from './SvgCumbreLogo.js';
 import Grid from './Grid.js';
 
 const imagesMarginTop = 120;
@@ -79,7 +80,8 @@ class SvgPreview extends Component {
 						{stylesPrefix + svgStyles + `fill: ${this.props.posterData.frontColor};` + stylesSufix}
 					</style>
 					<SvgDefs gradientBegin={this.props.posterData.bgColor1} gradientEnd={this.props.posterData.bgColor2} />
-					<rect x="0" y="0" height="100%" width="100%" fill="url(#bgGrad)" />		
+					<rect x="0" y="0" height="100%" width="100%" fill="url(#bgGrad)" />
+					<SvgCumbreLogo watermarkColor={this.props.posterData.watermarkColor} />
 					<text fontFamily="'LeagueGothic-Regular'" fontSize={posterTitleFontSize}  x={Grid.getMarginWidth()} y="80" id="posterTitle">{this.props.posterData.title}</text>
 					
 					{this.createMemberPhotos()}
