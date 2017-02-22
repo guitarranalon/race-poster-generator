@@ -5,10 +5,11 @@ import SvgPreview from './SvgPreview.js';
 class PosterForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {title: '', bgColor: '#333', frontColor: '#fff', teamData: this.props.teamData , areGoing: new Set()};
+    this.state = {title: '', bgColor1: '#333', bgColor2: '#555', frontColor: '#fff', teamData: this.props.teamData , areGoing: new Set()};
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleBgColorChange = this.handleBgColorChange.bind(this);
+    this.handleBgColor1Change = this.handleBgColor1Change.bind(this);
+    this.handleBgColor2Change = this.handleBgColor2Change.bind(this);
     this.handleFrontColorChange = this.handleFrontColorChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 	this.handleInputChange = this.handleInputChange.bind(this);
@@ -18,10 +19,15 @@ class PosterForm extends Component {
     this.setState({title: event.target.value});
   }
   
-  handleBgColorChange(event){
+  handleBgColor1Change(event){
     console.log(event.target.value);
-	this.setState({bgColor: event.target.value});
+	this.setState({bgColor1: event.target.value});
   }  
+  
+  handleBgColor2Change(event){
+    console.log(event.target.value);
+	this.setState({bgColor2: event.target.value});
+  }    
   
   handleFrontColorChange(event){
 	this.setState({frontColor: event.target.value});
@@ -65,9 +71,13 @@ class PosterForm extends Component {
 		  <input type="color" value={this.state.frontColor} onChange={this.handleFrontColorChange} />
         </label>		 
 		 <label>
-		  Fondo:
-		  <input type="color" value={this.state.bgColor} onChange={this.handleBgColorChange} />
+		  Inicio fondo:
+		  <input type="color" value={this.state.bgColor1} onChange={this.handleBgColor1Change} />
         </label>
+		 <label>
+		  Fin fondo:
+		  <input type="color" value={this.state.bgColor2} onChange={this.handleBgColor2Change} />
+        </label>		
 		<legend>Corredores:</legend>
 		<ul>
 			{members}
