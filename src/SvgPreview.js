@@ -5,9 +5,9 @@ import SvgDefs from './SvgDefs.js';
 import SvgCumbreLogo from './SvgCumbreLogo.js';
 import Grid from './Grid.js';
 
-const imagesMarginTop = 120;
+const imagesMarginTop = 130;
 const sponsorsHeight = 320;
-const posterTitleFontSize = '50';
+const posterTitleFontSize = '60';
 const stylesPrefix = `#posterTitle{`;
 const svgStyles=`
 		font-size:${posterTitleFontSize}px;
@@ -67,6 +67,11 @@ class SvgPreview extends Component {
 	});
  }
  
+  componentDidUpdate() {
+	let x = (Grid.getTotalWidth()-this.refs.posterTitle.getBBox().width)/2;
+    this.refs.posterTitle.setAttribute('x', x);	
+  } 
+ 
  render() {
 	//------------------Margen sup e inf     + fotos+3 (para que muestre el hueco al empezar a rellenar la fila) * (Ancho de las fotos -son cuadradas-   + ancho separación fotos)
 	let posterHeight = 2*imagesMarginTop + Math.floor((this.props.posterData.areGoing.size+3)/4)*(Grid.widthOfColumns(3) + Grid.getGutterWidth()) + sponsorsHeight;
@@ -82,7 +87,7 @@ class SvgPreview extends Component {
 					<SvgDefs gradientBegin={this.props.posterData.bgColor1} gradientEnd={this.props.posterData.bgColor2} />
 					<rect x="0" y="0" height="100%" width="100%" fill="url(#bgGrad)" />
 					<SvgCumbreLogo watermarkColor={this.props.posterData.watermarkColor} />
-					<text fontFamily="'LeagueGothic-Regular'" fontSize={posterTitleFontSize}  x={Grid.getMarginWidth()} y="80" id="posterTitle">{this.props.posterData.title}</text>
+					<text fontFamily="'LeagueGothic-Regular'" fontSize={posterTitleFontSize}  x={Grid.getMarginWidth()} y="90" id="posterTitle" ref="posterTitle">{this.props.posterData.title}</text>
 					
 					{this.createMemberPhotos()}
 					
