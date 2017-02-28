@@ -21,6 +21,7 @@ const svgStyles=`
 		font-family:League Gothic;
 		font-stretch:normal;
 		font-variant:normal;
+		filter:url(#subtleShadow);
 `;
 const stylesSufix = `	}`;
 
@@ -68,6 +69,7 @@ class SvgPreview extends Component {
  }
  
   componentDidUpdate() {
+    // Centering title after render
 	let x = (Grid.getTotalWidth()-this.refs.posterTitle.getBBox().width)/2;
     this.refs.posterTitle.setAttribute('x', x);	
   } 
