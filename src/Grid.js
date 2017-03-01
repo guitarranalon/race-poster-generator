@@ -1,6 +1,6 @@
 const gridConfig = {
 	columns: 12,	
-	margin: 22,
+	margin: 42,
 	gutter: 20,
 	column: 58
 }
