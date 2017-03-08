@@ -1,0 +1,21 @@
+.svgDownload a{
+	background: #ffe035;
+	color: #444;
+	display: block;
+	font-size: 1.2em;
+	padding: 1em 3.5em;
+	text-align: center;
+	text-transform: uppercase;
+	transition: all .4s ease;
+}
+
+.svgDownload a:hover{
+	background: #444;
+	color: #ffe035;
+	text-decoration: none;
+	transition: all .12s ease;
+}
+
+#svgPreview{
+	margin-bottom: 1.5em;
+}
